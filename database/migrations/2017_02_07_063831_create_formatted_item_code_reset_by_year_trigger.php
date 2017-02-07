@@ -47,6 +47,6 @@ class CreateFormattedItemCodeResetByYearTrigger extends Migration
      */
     public function down()
     {
-        //
+        DB::unprepared('DROP TRIGGER `formatted_item_code_reset_by_year`');
     }
 }
