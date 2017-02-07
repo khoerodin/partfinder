@@ -15,7 +15,12 @@
                 @else
                     part number contain
                 @endif
-                "{{strtoupper($q)}}" keyword
+                "{{strtoupper($q)}}" 
+                @if(count(explode(' ',$q))>1)
+                    keywords
+                @else
+                    keyword
+                @endif                
                 @if($results->total()>0 && ($q <> '' || $q <> null) )
                     · <a 
                             onclick="event.preventDefault();
@@ -26,6 +31,9 @@
                             <input type="hidden" name="q" value="{{$q or ''}}" id="excel_vars">
                         </form>
                 @endif
+            @else
+            Your search - <b>{{$q}}</b> - did not match any part numbers.<br>
+            Try another keywords.
             @endif            
             <div>
 

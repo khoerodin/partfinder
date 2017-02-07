@@ -22,7 +22,7 @@ class CreatePartNumberTable extends Migration
             $table->string('man_code', 10);
             $table->string('man_name')->default('');
             $table->string('part_number');
-            $table->text('po_text')->default('');
+            $table->text('po_text');
             $table->timestamps();
         });
     }

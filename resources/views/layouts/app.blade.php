@@ -9,7 +9,13 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>
+    @if(isset($q))
+    {{ strtoupper($q) }} - {{ config('app.name', '') }}
+    @else
+    {{ config('app.name', '') }}
+    @endif
+    </title>
 
     <!-- Styles -->
     <link href="/css/style.min.css" rel="stylesheet">
